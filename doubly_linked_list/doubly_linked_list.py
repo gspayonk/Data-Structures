@@ -105,7 +105,7 @@ class DoublyLinkedList:
         if not self.head and not self.tail:
             print('Error: node not in list')
             return
-        elif node == self.tail:
+        elif self.head == self.tail:
             self.head = None
             self.tail = None
         elif node == self.head:
