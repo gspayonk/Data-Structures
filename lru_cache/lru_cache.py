@@ -9,8 +9,8 @@ class LRUCache:
     to every node stored in the cache.
     """
     def __init__(self, limit=10):
-        self.limit = limit
         self.size = 0
+        self.limit = limit
         self.cache = DoublyLinkedList()
         self.storage = {}
 
@@ -44,10 +44,10 @@ class LRUCache:
             st_node.value[1] = value
             self.cache.move_to_front(st_node)
         else:
-            self.cache.add_to_head([key, value])
+            self.cache.add_to_head([key,value])
             self.storage[key] = self.cache.head
             if self.size >= self.limit:
                 del self.storage[self.cache.tail.value[0]]
                 self.cache.remove_from_tail()
             else:
-                self.size +=1
+                self.size += 1
